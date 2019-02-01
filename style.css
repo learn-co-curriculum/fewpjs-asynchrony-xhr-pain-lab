@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  background: #333;
+}
+
+main {
+  width: 90vw;
+  margin: auto;
+  padding: 5px;
+  background: grey;
+}
+
+section {
+  background: #CCC;
+  padding: 5px;
+  margin: 10px;
+  box-shadow: 10px 10px 5px #444;
+}
+
+aside {
+  background: #DDD;
+  margin: 5px;
+  box-shadow: 5px 5px 2px #888;
+}
+
+aside img {
+  width: 30px;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+p{
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+h3 * {
+  padding: 0px 5px;
+  margin: 0;
+  line-height: 50px;
+  vertical-align: middle;
+}
+aside h3 {
+  font-size: 60%;
+}
+
+aside {
+  font-size: 80%;
+}
