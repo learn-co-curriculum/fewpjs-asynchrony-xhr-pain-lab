@@ -1,7 +1,6 @@
 document.addEventListener( 'DOMContentLoaded', () => {
   getPosts()
 } )
-
 const getPosts = () => {
   let xhr = new XMLHttpRequest();
   xhr.open( 'GET', 'http://localhost:3000/posts' );
@@ -21,7 +20,6 @@ const getComment = commentId => {
   } )
   xhr.send();
 }
-
 const createPost = post => {
   let section = document.createElement( 'section' )
   document.querySelector( 'main' )
