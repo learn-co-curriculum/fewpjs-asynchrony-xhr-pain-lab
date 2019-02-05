@@ -186,7 +186,7 @@ describe( 'index.js', () => {
         } )
       it( "each comment's user image is added to the DOM",
         () => {
-          console.log( document.body.innerHTML );
+
           let event = document.createEvent( 'Event' );
           event.initEvent( 'DOMContentLoaded', true, true );
           window.document.dispatchEvent( event );
