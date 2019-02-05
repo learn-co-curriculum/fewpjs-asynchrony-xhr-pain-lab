@@ -1,5 +1,8 @@
-const testVar = {}
+document.addEventListener( 'DOMContentLoaded', () => {
+  getPosts()
+} )
 
-function testFunc() {
-  return "hi"
+
+const getPosts = () => {
+
 }
