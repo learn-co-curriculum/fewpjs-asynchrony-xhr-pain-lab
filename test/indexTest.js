@@ -5,11 +5,13 @@ describe( 'index.js', () => {
     before( () => {
       xhr = sinon.useFakeXMLHttpRequest();
       window.XMLHttpRequest = xhr;
+
       xhr.onCreate = function ( req ) {
         requests.push( req );
       };
     } );
     beforeEach( () => {
+      window.document.body.innerHTML = "<main></main>"
       requests = [];
     } );
     after( () => {
@@ -50,12 +52,14 @@ describe( 'index.js', () => {
     let results;
     before( () => {
       xhr = sinon.useFakeXMLHttpRequest();
+
       window.XMLHttpRequest = xhr;
       xhr.onCreate = function ( req ) {
         requests.push( req );
       };
     } );
     beforeEach( () => {
+      window.document.body.innerHTML = "<main></main>"
       requests = [];
     } );
     after( () => {
@@ -114,11 +118,13 @@ describe( 'index.js', () => {
     before( () => {
       xhr = sinon.useFakeXMLHttpRequest();
       window.XMLHttpRequest = xhr;
+
       xhr.onCreate = function ( req ) {
         requests.push( req );
       };
     } );
     beforeEach( () => {
+      window.document.body.innerHTML = "<main></main>"
       requests = [];
     } );
     after( () => {
@@ -178,8 +184,9 @@ describe( 'index.js', () => {
                 [ 'user' ][ 'name' ] )
           }
         } )
-      it( "each comment's username is added to the DOM",
+      it( "each comment's user image is added to the DOM",
         () => {
+          console.log( document.body.innerHTML );
           let event = document.createEvent( 'Event' );
           event.initEvent( 'DOMContentLoaded', true, true );
           window.document.dispatchEvent( event );
@@ -197,6 +204,15 @@ describe( 'index.js', () => {
                 "Content-Type": "application/json"
               }, JSON.stringify( testData[ 'comments' ].find( comment => comment[ 'id' ] == commentId ) ) )
             }
+          }
+
+          let imageSources = Array.from( document.getElementsByTagName( 'img' ) )
+            .map( img => img.src )
+
+          for ( let i = 0; i < testData[ 'comments' ].length; i++ ) {
+            expect( imageSources )
+              .to.include( testData[ 'comments' ][ i ]
+                [ 'user' ][ 'image' ] )
           }
         } )
     } )
