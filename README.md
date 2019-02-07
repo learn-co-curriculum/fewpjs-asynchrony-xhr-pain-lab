@@ -11,9 +11,9 @@
 For a long part of internet history, `XMLHttpRequest` was the main way for
 websites using JavaScript to access remote data. It was a great tool, but was
 not without some pain. Namely, because of the structure of a `XMLHttpRequest`,
-attempting to send multiple requests for data can become very complicated. If the
-data of one request were used as input in _another_ request things got very, very
-complicated.
+attempting to send multiple requests for data can become very complicated. If
+the data of one request were used as input in _another_ request things got very,
+very complicated.
 
 In this lab, we're going to practice thinking in `XMLHttpRequest`s by creating
 a few and using them in collaboration.
@@ -32,7 +32,8 @@ data includes associate comments, and data for each comment includes the
 corresponding post id.
 
 Starting with getting all of the posts, your task render all posts, their user
-names and images, any comments, and the name and image of the user who commented.
+names and images, any comments, and the name and image of the user who
+commented.
 
 To see an example of a finished product, open up `example.html`.
 
@@ -52,8 +53,8 @@ Resources
   http://localhost:3000/comments
 ```
 
-These endpoints each provide a different set of data. Visit the addresses in your
-browser to confirm they are working. Since it is mimicking a RESTful API,
+These endpoints each provide a different set of data. Visit the addresses in
+your browser to confirm they are working. Since it is mimicking a RESTful API,
 sending a request to 'http://localhost:3000/posts' will return all forum posts,
 while 'http://localhost:3000/posts/1' will return the forum post with the id of 1.
 
@@ -63,9 +64,9 @@ tests while also running the server, open a second tab in your terminal.
 ## Instructions
 
 The main goal of this lab is to handle retrieving and displaying a complex set
-of data. The tests are not focused on which particular DOM elements you choose to
-build out the page's content. If you'd like your solution to be styled, follow the
-DOM element structure seen in `example.html`.
+of data. The tests are not focused on which particular DOM elements you choose
+to build out the page's content. If you'd like your solution to be styled,
+follow the DOM element structure seen in `example.html`.
 
 To help you get started, some starter code is provided for you. You'll need to
 display all the posts available from the JSON server, so start by writing an
@@ -77,23 +78,23 @@ content makes it to the page.
 
 ## Conclusion
 
-There are a number of ways to write the solution, but each have their complications.
+There are a number of ways to write the solution, but each have their
+complications.
 
 Sometimes we will be tasked with building websites that pull from multiple
-sources and will need to aggregate them together. In this case, we don't actually know what
-comments we need until we've got posts, requiring at least two `XMLHttpRequest`s.
+sources and will need to aggregate them together. In this case, we don't
+actually know what comments we need until we've got posts, requiring at least
+two `XMLHttpRequest`s.
 
-Sometimes you might want to work with two **different** APIs fo example one to retrieve planned
-shows for your favorite band and then another to retrieve weather predictions for each
-of those dates.
+Sometimes you might want to work with two **different** APIs fo example one to
+retrieve planned shows for your favorite band and then another to retrieve
+weather predictions for each of those dates.
 
-While `XMLHttpRequest` was the _first_ tool that JavaScript developers got for retrieving
-data asynchronously, it wasn't the _last_. In order to address these complications, the
-`then()`-based API of `fetch()` was created.
+While `XMLHttpRequest` was the _first_ tool that JavaScript developers got for
+retrieving data asynchronously, it wasn't the _last_. In order to address these
+complications, the `then()`-based API of `fetch()` was created.
 
-In the next lab we're going to get a clearer picture into how the newer Fetch API cleans up our
-code and makes it easier to read and write.
-
-## Resources
+In the next lab we're going to get a clearer picture into how the newer Fetch
+API cleans up our code and makes it easier to read and write.
 
 [json-server]: https://github.com/typicode/json-server
