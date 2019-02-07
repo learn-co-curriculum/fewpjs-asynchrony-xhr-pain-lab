@@ -21,7 +21,7 @@ describe( 'index.js', () => {
     it( "sends an XHR GET request to 'http://localhost:3000/posts'",
       () => {
         getPosts();
-        expect( requests.length )
+        expect( requests.length, "No XMLHttpRequest was made" )
           .to.eql( 1 );
         expect( requests[ 0 ][ 'url' ] )
           .to.eql( 'http://localhost:3000/posts' );
@@ -72,6 +72,8 @@ describe( 'index.js', () => {
           let event = document.createEvent( 'Event' );
           event.initEvent( 'DOMContentLoaded', true, true );
           window.document.dispatchEvent( event );
+          expect( requests.length, "No XMLHttpRequest was made" )
+            .to.above( 0 );
           requests[ 0 ].respond( 200, {
             "Content-Type": "application/json"
           }, JSON.stringify( [ ...testData[ 'posts' ] ] ) )
@@ -86,6 +88,8 @@ describe( 'index.js', () => {
           let event = document.createEvent( 'Event' );
           event.initEvent( 'DOMContentLoaded', true, true );
           window.document.dispatchEvent( event );
+          expect( requests.length, "No XMLHttpRequest was made" )
+            .to.above( 0 );
           requests[ 0 ].respond( 200, {
             "Content-Type": "application/json"
           }, JSON.stringify( [ ...testData[ 'posts' ] ] ) )
@@ -100,6 +104,8 @@ describe( 'index.js', () => {
           let event = document.createEvent( 'Event' );
           event.initEvent( 'DOMContentLoaded', true, true );
           window.document.dispatchEvent( event );
+          expect( requests.length, "No XMLHttpRequest was made" )
+            .to.above( 0 );
           requests[ 0 ].respond( 200, {
             "Content-Type": "application/json"
           }, JSON.stringify( [ ...testData[ 'posts' ] ] ) )
@@ -137,6 +143,8 @@ describe( 'index.js', () => {
           let event = document.createEvent( 'Event' );
           event.initEvent( 'DOMContentLoaded', true, true );
           window.document.dispatchEvent( event );
+          expect( requests.length, "No XMLHttpRequest was made" )
+            .to.above( 0 );
           requests[ 0 ].respond( 200, {
             "Content-Type": "application/json"
           }, JSON.stringify( [ ...testData[ 'posts' ] ] ) )
@@ -163,6 +171,8 @@ describe( 'index.js', () => {
           let event = document.createEvent( 'Event' );
           event.initEvent( 'DOMContentLoaded', true, true );
           window.document.dispatchEvent( event );
+          expect( requests.length, "No XMLHttpRequest was made" )
+            .to.above( 0 );
           requests[ 0 ].respond( 200, {
             "Content-Type": "application/json"
           }, JSON.stringify( [ ...testData[ 'posts' ] ] ) )
@@ -190,6 +200,8 @@ describe( 'index.js', () => {
           let event = document.createEvent( 'Event' );
           event.initEvent( 'DOMContentLoaded', true, true );
           window.document.dispatchEvent( event );
+          expect( requests.length, "No XMLHttpRequest was made" )
+            .to.above( 0 );
           requests[ 0 ].respond( 200, {
             "Content-Type": "application/json"
           }, JSON.stringify( [ ...testData[ 'posts' ] ] ) )
