@@ -10,13 +10,21 @@
 
 For a long part of internet history, `XMLHttpRequest` was the main way for
 websites using JavaScript to access remote data. It was a great tool, but was
-not without some pain. Namely, because of the structure of a `XMLHttpRequest`,
-attempting to send multiple requests for data can become very complicated. If
-the data of one request were used as input in _another_ request things got very,
-very complicated.
+not without some pain. Namely, because of the event- and callback-based
+structure of a `XMLHttpRequest`, attempting to write code that uses 
+multiple requests for data tended to become very complicated.
+
+For example, what if the data of one request were used as input in _another_ request?
+Or what if you needed two _different_ requests to finish successfully before
+you use their data to update the DOM? How would you wait until both were "back?"
+And what if one of the requests were successful and the other were not, would
+you add `undefined`s all over? Whew. What a mess.
 
 In this lab, we're going to practice thinking in `XMLHttpRequest`s by creating
-a few and using them in collaboration.
+a few and using them in collaboration. We're going to work in a world where
+we'll filter out some of the errors that make working with XHR a challenge. Nevertheless,
+with an appreciation of these problems, you'll be ready to think critically and evaluate
+the merits of `fetch()` and other asynchronous code implementations.
 
 ## Puppy Writing Forum
 
